@@ -32,7 +32,7 @@ export default new Router({
       name: 'Food',
       component: Food
     },
-     {
+    {
       path: '/restaurant',
       name: 'RestaurantList',
       component: RestaurantList
@@ -41,7 +41,6 @@ export default new Router({
       path: '/restaurant/:id',
       name: 'Restaurant',
       component: Restaurant
-    },
-
+    }
   ]
 })
