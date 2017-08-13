@@ -13,7 +13,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/food',
       name: 'FoodList',
       component: FoodList
     },
@@ -33,14 +33,14 @@ export default new Router({
       component: Food
     },
      {
-      path: '/restaurant/:id',
+      path: '/restaurant',
       name: 'RestaurantList',
       component: RestaurantList
     },
     {
       path: '/restaurant/:id',
-      name: 'RestaurantList',
-      component: RestaurantList
+      name: 'Restaurant',
+      component: Restaurant
     },
 
   ]
