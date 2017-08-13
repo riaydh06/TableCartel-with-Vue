@@ -7,7 +7,6 @@ import FoodList from '../components/FoodList.vue'
 import Restaurant from '../components/Restaurant.vue'
 import RestaurantList from '../components/RestaurantList.vue'
 
-
 Vue.use(Router)
 
 export default new Router({
