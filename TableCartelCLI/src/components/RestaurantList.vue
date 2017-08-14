@@ -7,10 +7,10 @@
 				<div class="card__content custom_card_content">
 					<div class="plus-icon">
                     <a v-if="rest.thumbnail" :href="rest.thumbnail" data-lightbox="image-1" data-title="My caption"><ons-icon icon="md-plus"></ons-icon></a>
-					<a v-else><a href="img/landingpage/rectangle-10.png" data-lightbox="image-1" data-title="My caption"><ons-icon icon="md-plus"></ons-icon></a></a>
+					<a v-else><a href="static/assets/img/landingpage/rectangle-10.png" data-lightbox="image-1" data-title="My caption"><ons-icon icon="md-plus"></ons-icon></a></a>
 					</div>
                     <a href="" v-if="rest.thumbnail"><img v-bind:src="rest.thumbnail" /></a>
-                    <a href="" v-else><img src="img/landingpage/rectangle-10.png" /></a>
+                    <a href="" v-else><img src="static/assets/img/landingpage/rectangle-10.png" /></a>
                     <div class="food_list_content_bg">
 					<div class="food_list_content">
 						<h3><a href="">Article Name</a></h3>

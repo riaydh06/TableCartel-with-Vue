@@ -17,12 +17,10 @@
 								<h5><a href="">Publisher Name</a></h5>
 								<router-link :to="{path: '/food/'+fd.id}"><h5>{{fd.title.rendered}}</h5></router-link>
 								<div class="cuisine">
-                  <ul>
-                    <li v-for="csn in fd.cuisine_type">{{ csn.name }}</li>
-                  </ul>
-                </div>
-                </br>
-
+				                  <ul>
+				                    <li v-for="csn in fd.cuisine_type">{{ csn.name }}</li>
+				                  </ul>
+				                 </div></br> 
 
 								<p v-html="fd.content.rendered"></p>
 							    <div class="single_food_list_footer_top">

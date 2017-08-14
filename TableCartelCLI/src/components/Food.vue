@@ -12,14 +12,15 @@
             
             <div class="card__content_two">
           
-                      <h2  v-for="item in food.cuisine_type" >
-                        Cuisin Type: {{ item.name }}
-                    </h2>
+                   <h2  class="cuisine" v-for="item in food.cuisine_type" >
+                         {{ item.name }}
+                  </h2><br>
             
 		  </div>
 		</div>
 		<div class="pizza flow">
-			<img src="static/assets/img/pizza.PNG" width="460" height="345">
+      <img v-if="food.thumbnail" v-bind:src="food.thumbnail" width="460" height="345">
+			<img v-else src="static/assets/img/pizza.PNG" width="460" height="345">
 		</div>
 
 
@@ -49,7 +50,7 @@
 		<div class="main_card">
 		  <div class="card">
 
-			<div class="card__content_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+			<div class="card__content_text"><p v-html="food.content.rendered"></p></div>
 
 		  </div>
 			<p class="one_day">1d ago</p>
@@ -206,3 +207,10 @@
     }
   }
 </script>
+<style scoped>
+  .cuisine {
+    float: left;
+    margin-right: 20px;
+    list-style: none;
+  }
+</style>
