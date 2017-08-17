@@ -1,5 +1,6 @@
 <template>
-<section>
+    <div>
+        <section>
 			<div class="ingredients_area flow">
 				<div class="width flow">
 					<div class="ingredients flow">
@@ -25,7 +26,7 @@
 						</div>
 						<div class="video flow">
 							<video width="400" controls>
-							  <source src="video/1.mp4" type="video/mp4">
+							  <source src="static/assets/video/1.mp4" type="video/mp4">
 							  Your browser does not support HTML5 video.
 							</video>
 						</div>
@@ -49,7 +50,7 @@ class="card__title card--material__title">Spaghetti Vongole</div>
 			<p>Preparation Time</p>
 		</div>
 		<div class="timetable_two flow">
-			 <img src="img/svgicon/group-91.svg" alt="" />
+			 <img src="static/assets/img/svgicon/group-91.svg" alt="" />
 		</div>
 		<div class="one_hour flow">
 			<p>1 hr 25 mins</p>
@@ -61,7 +62,7 @@ class="card__title card--material__title">Spaghetti Vongole</div>
 			<p>Serving</p>
 		</div>
 		<div class="timetable_two flow">
-			<img src="img/svgicon/group-92.svg" alt="" />
+			<img src="static/assets/img/svgicon/group-92.svg" alt="" />
 		</div>
 		<div class="one_hour flow">
 			<p>Main</p>
@@ -73,7 +74,7 @@ class="card__title card--material__title">Spaghetti Vongole</div>
 			<p>Deficulty</p>
 		</div>
 		<div class="timetable_two flow">
-			<img src="img/svgicon/path-10.svg" alt="" />
+			<img src="static/assets/img/svgicon/path-10.svg" alt="" />
 		</div>
 		<div class="one_hour flow">
 			<p>Medium</p>
@@ -82,6 +83,7 @@ class="card__title card--material__title">Spaghetti Vongole</div>
 	</div>
 
 <div class="get_ingredients flow"><a href="#">Get Ingredients</a></div>	
+</div>
 </template>
 <script>
   export default {

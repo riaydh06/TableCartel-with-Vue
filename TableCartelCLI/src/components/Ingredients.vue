@@ -1,6 +1,6 @@
 <template>
    <!--Recipe header area start--> 
-
+  <div>
 		<section>
 			<div class="ingredients_area flow">
 				<div class="width flow">
@@ -19,7 +19,7 @@
 								</div>
 								<div class="settings_content"><a href="index.html">Ingredients</a></div>
 								<div class="settings_right_icon">
-									<a href="settings.html"><img src="img/svgicon/plus.svg" alt="plus icon" /></a>
+									<a href="settings.html"><img src="static/assets/img/svgicon/plus.svg" alt="plus icon" /></a>
 								</div>
 								
 							</div>  
@@ -27,7 +27,7 @@
 						</div>
 						<div class="video flow">
 							<video width="400" controls>
-							  <source src="video/1.mp4" type="video/mp4">
+							  <source src="static/assets/video/1.mp4" type="video/mp4">
 							  Your browser does not support HTML5 video.
 							</video>
 						</div>
@@ -94,6 +94,7 @@
     </div>
 </div>
 <div class="get_ingredients flow"><a href="#">Get Ingredients</a></div>
+</div>
 </template>
 <script>
   export default {

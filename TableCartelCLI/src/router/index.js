@@ -2,15 +2,20 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import About from '../components/About.vue'
 // import Coins from '../components/Coins.vue'
+import Search from '../components/Search.vue'
 import Food from '../components/Food.vue'
 import FoodList from '../components/FoodList.vue'
-import RestaurantList from '../components/RestaurantList.vue'
+import Marketplace from '../components/Marketplace.vue'
 import Restaurant from '../components/Restaurant.vue'
-// import Marketplace from '../components/Marketplace.vue'
-// import Prifile from '../components/Prifile.vue'
-// import Ingredients from '../components/Ingredients.vue'
-// import InfoRecipe from '../components/InfoRecipe.vue'
-// import Login from '../components/Login.vue'
+import Profile from '../components/Profile.vue'
+import Ingredients from '../components/Ingredients.vue'
+import Recipes from '../components/Recipes.vue'
+import Setting from '../components/Setting.vue'
+import InfoRecipe from '../components/InfoRecipe.vue'
+import Login from '../components/Login.vue'
+import TableBooking from '../components/TableBooking.vue'
+import ThingsYouFollow from '../components/ThingsYouFollow.vue'
+import Updates from '../components/Updates.vue'
 
 Vue.use(Router)
 
@@ -18,6 +23,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Search',
+      component: Search
+    },
+    {
+      path: '/FoodList',
       name: 'FoodList',
       component: FoodList
     },
@@ -37,39 +47,59 @@ export default new Router({
       component: Food
     },
     {
-      path: '/RestaurantList',
-      name: 'RestaurantList',
-      component: RestaurantList
+      path: '/Marketplace',
+      name: 'Marketplace',
+      component: Marketplace
     },
     {
       path: '/restaurant/:id',
       name: 'Restaurant',
       component: Restaurant
+    },
+    {
+      path: '/Profile',
+      name: 'Profile',
+      component: Profile
+    },
+    {
+      path: '/Ingredients',
+      name: 'Ingredients',
+      component: Ingredients
+    },
+    {
+      path: '/Recipes',
+      name: 'Recipes',
+      component: Recipes
+    },
+    {
+      path: '/Setting',
+      name: 'Setting',
+      component: Setting
+    },
+    {
+      path: '/InfoRecipe',
+      name: 'InfoRecipe',
+      component: InfoRecipe
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/TableBooking',
+      name: 'TableBooking',
+      component: TableBooking
+    },
+    {
+      path: '/ThingsYouFollow',
+      name: 'ThingsYouFollow',
+      component: ThingsYouFollow
+    },
+    {
+      path: '/Updates',
+      name: 'Updates',
+      component: Updates
     }
-    // {
-    //   path: '/Marketplace',
-    //   name: 'Marketplace',
-    //   component: Marketplace
-    // },
-    // {
-    //   path: '/Prifile',
-    //   name: 'Prifile',
-    //   component: Prifile
-    // }
-    // {
-    //   path: '/Ingredients',
-    //   name: 'Ingredients',
-    //   component: Ingredients
-    // }
-    // {
-    //   path: '/InfoRecipe',
-    //   name: 'InfoRecipe',
-    //   component: InfoRecipe
-    // }
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: Login
-    // }
   ]
 })
