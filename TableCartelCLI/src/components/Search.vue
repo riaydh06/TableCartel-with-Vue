@@ -24,7 +24,7 @@
 
       </div>
     <div class="card_one bg-card">
-      <h2 class="card__title search_title"><router-link to="/FoodList">Foods</router-link></h2>
+      <h2 class="card__title search_title"><router-link to="/FoodTexo">Foods</router-link></h2>
 
       </div>
     <!-- <div class="card_one bg-card">
@@ -44,7 +44,7 @@
       </div> -->
 
   </div>
-  <<div class="footer_logos_area updates_section_footer">
+  <div class="footer_logos_area updates_section_footer">
     <div class="footer_logos_width">
       <div class="footer_logo">
         <ul>

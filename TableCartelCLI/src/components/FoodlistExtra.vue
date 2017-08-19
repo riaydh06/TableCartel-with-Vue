@@ -63,6 +63,7 @@
 	</div>
 	</paginate>
 	<div>
+		<paginate-links for="food" :limit="10" :show-step-links="true"></paginate-links>
         <paginate-links for="food" :simple="{
         next: 'Next »',
         prev: '« Back'
@@ -107,7 +108,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .cuisine li{
     float: left;
     margin-right: 20px;
@@ -122,17 +123,19 @@ ul.paginate-links.food{
 ul.paginate-links {
   list-style: none;
   color: white;
+  float: left;
 
 }
-.next{
 
-	float:right;
+li.paginate-links {
+  display: inline-block;
 }
-.prev{
-	width:50%;
-	float:left;
-}
+ul.paginate-links.food{
 
+}
+ul.paginate-links.food > li.active > a{
+	   float: left;
+}
 
 
 </style>

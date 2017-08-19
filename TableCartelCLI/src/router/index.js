@@ -16,6 +16,10 @@ import Login from '../components/Login.vue'
 import TableBooking from '../components/TableBooking.vue'
 import ThingsYouFollow from '../components/ThingsYouFollow.vue'
 import Updates from '../components/Updates.vue'
+import FoodTexo from '../components/FoodTexo.vue'
+import FoodListTexo from '../components/FoodListTexo.vue'
+import RestaurantFoodTexo from '../components/RestaurantFoodTexo.vue'
+import RestaurantFoodList from '../components/RestaurantFoodList.vue'
 
 Vue.use(Router)
 
@@ -100,6 +104,26 @@ export default new Router({
       path: '/Updates',
       name: 'Updates',
       component: Updates
+    },
+    {
+      path: '/FoodTexo',
+      name: 'FoodTexo',
+      component: FoodTexo
+    },
+    {
+      path: '/get-all-term-food/:id',
+      name: 'FoodListTexo',
+      component: FoodListTexo
+    },
+    {
+      path: '/RestaurantFoodTexo/:id',
+      name: 'RestaurantFoodTexo',
+      component: RestaurantFoodTexo
+    },
+    {
+      path: '/get-all-food/:id',
+      name: 'RestaurantFoodList',
+      component: RestaurantFoodList
     }
   ]
 })

@@ -97,7 +97,7 @@
     <ons-row>
       <div class="restaruent_menu_header">
         <img src="static/assets/img/ratingicon/path-11.png" alt="" />
-         <h3>Menu</h3>
+         <h3 class="card__title search_title1"> <router-link :to="{path: '/get-all-food/'+rest.id}">Menu</router-link></h3>
          <br />
          <h2>Ratings and Reviews</h2>
       </div>
@@ -296,4 +296,8 @@
     margin-right: 20px;
     list-style: none;
   }
+  .search_title1 a {
+    color: black;
+    text-decoration: none;
+}
 </style>

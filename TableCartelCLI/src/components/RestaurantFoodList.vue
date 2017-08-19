@@ -19,14 +19,14 @@
 			    <div class="card food_list_cart">
 				    <div class="card__content custom_card_content">
 						<div class="plus-icon">
-							<a v-if="fd.thumbnail" :href="fd.thumbnail" data-lightbox="image-1" data-title="My caption"><ons-icon icon="md-plus"></ons-icon></a>
+							<a v-if="fd.img" :href="fd.img" data-lightbox="image-1" data-title="My caption"><ons-icon icon="md-plus"></ons-icon></a>
 							<a v-else href="static/assets/img/landingpage/rectangle-10.png" data-lightbox="image-1" data-title="My caption"><ons-icon icon="md-plus"></ons-icon></a>
 						</div>
-							<a href="" v-if="fd.thumbnail"><img v-bind:src="fd.thumbnail" /></a>
+							<a href="" v-if="fd.img"><img v-bind:src="fd.img" /></a>
 							<a href="" v-else><img src="static/assets/img/landingpage/rectangle-10.png" /></a>
 						<div class="food_list_content_bg">
 							<div class="food_list_content">
-								<h3><router-link :to="{path: '/food/'+fd.id}">{{fd.title.rendered}}</router-link></h3>
+								<h3><router-link :to="{path: '/food/'+fd.ID}">{{fd.post_title}}</router-link></h3>
 								<h5><a href="">Publisher Name</a></h5>
 								<!-- <div class="cuisine">
 				                  <ul>
@@ -34,7 +34,7 @@
 				                  </ul>
 				                 </div></br>  -->
 
-								<p v-html="fd.content.rendered"></p>
+								<p v-html="fd.post_content"></p>
 							    <div class="single_food_list_footer_top">
 
 									<a href="">
@@ -79,7 +79,7 @@
   import VuePaginate from 'vue-paginate'
   Vue.use(VuePaginate)
   export default {
-    name: 'FoodList',
+    name: 'RestaurantFoodList',
     data () {
       return {
         food: {},
@@ -94,7 +94,7 @@
     },
     methods: {
       fetchData () {
-        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/wp/v2/food?per_page=100')
+        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/Table-cartel/v1/get-all-food/' + this.$route.params.id + '/')
         .then((resp) => {
           this.food = resp.data
           console.log('--------------------------------')

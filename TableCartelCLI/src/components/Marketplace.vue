@@ -31,8 +31,7 @@
 			<ons-icon icon="fa-search" class="map_icon_color"></ons-icon>
 			<select>
 				<option>All Restaurant</option>
-				<option>Gulshan</option>
-				<option>Mirpur</option>
+				<option v-for="item in location">{{ item.name }}</option>
 			</select>
 		</div>
     </div>
@@ -54,12 +53,13 @@
 			<div v-for="rest in restaurant">
 				<div class="single_booking_row">
 					<ons-row>
-					  <ons-col><router-link :to="{path: '/restaurant/'+rest.id}"> {{rest.title.rendered}}</router-link></ons-col>		  
+					  <ons-col><router-link :to="{path: '/restaurant/'+rest.id}" v-html="rest.title.rendered"> </router-link></ons-col>		  
 					  <ons-col><a href="" v-for="loc in rest.location">{{loc.name}},</a></ons-col>
 					  <ons-col class="marketplace_time">35 min</ons-col>
 					</ons-row>
 				</div>	
 			</div>	
+			<infinite-loading :on-infinite="onInfinite" ref="infiniteLoading"></infinite-loading>
 		</div>
 	</div>
 
@@ -89,11 +89,13 @@
 </template>
 <script>
   import axios from 'axios'
+  import InfiniteLoading from 'vue-infinite-loading'
   export default {
     name: 'Marketplace',
     data () {
       return {
-        restaurant: {}
+        restaurant: [],
+        location: []
       }
     },
     created () {
@@ -104,16 +106,35 @@
     },
     methods: {
       fetchData () {
-        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/wp/v2/restaurant?page=1&per_page=100')
+        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/wp/v2/restaurant')
         .then((resp) => {
           this.restaurant = resp.data
+          console.log('--------------------------------')
+          console.log(resp.data)
+        })
+        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/wp/v2/all-terms?term=location')
+        .then((resp) => {
+          this.location = resp.data
           console.log('--------------------------------')
           console.log(resp.data)
         })
         .catch((err) => {
           console.log(err)
         })
+      },
+      onInfinite () {
+        setTimeout(() => {
+          const temp = []
+          for (let i = this.restaurant.length + 1; i <= this.restaurant.length + 20; i++) {
+            temp.push(i)
+          }
+          this.restaurant = this.restaurant.concat(temp)
+          this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+        }, 1000)
       }
+    },
+    components: {
+      InfiniteLoading
     }
   }
 </script>

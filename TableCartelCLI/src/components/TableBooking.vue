@@ -47,48 +47,20 @@
 				</div>
 				<hr />
 				<div class="restaurant_booking_hotel_name">
-					<div class="single_booking_row">
-						<ons-row>
-						  <ons-col><a href="">Restaurant Name 1</a></ons-col>		  
-						  <ons-col><a href=""><ons-icon icon="fa-map-marker" class="map_icon_color"></ons-icon></a></ons-col>
-						  <ons-col>35 min</ons-col>
-						</ons-row>
+					<div v-for="rest in restaurant">
+						<div class="single_booking_row">
+							<ons-row>
+							  <ons-col><router-link :to="{path: '/restaurant/'+rest.id}" v-html="rest.title.rendered"> </router-link></ons-col>		  
+							  <ons-col><a href="" v-for="loc in rest.location">{{loc.name}},</a></ons-col>
+							  <ons-col class="marketplace_time">35 min</ons-col>
+							</ons-row>
+						</div>	
 					</div>
-					<div class="single_booking_row">
-						<ons-row>
-						  <ons-col><a href="">Restaurant Name 2</a></ons-col>			  
-						 <ons-col><a href=""><ons-icon icon="fa-map-marker" class="map_icon_color"></ons-icon></a></ons-col>
-						  <ons-col>35 min</ons-col>
-						</ons-row>
-					</div>
-					<div class="single_booking_row">
-						<ons-row>
-						  <ons-col><a href="">Restaurant Name 3</a></ons-col>		  
-						  <ons-col><a href=""><ons-icon icon="fa-map-marker" class="map_icon_color"></ons-icon></a></ons-col>
-						  <ons-col>35 min</ons-col>
-						</ons-row>
-					</div>
-					<div class="single_booking_row">
-						<ons-row>
-						  <ons-col><a href="">Restaurant Name 4</a></ons-col>		  
-						 <ons-col><a href=""><ons-icon icon="fa-map-marker" class="map_icon_color"></ons-icon></a></ons-col>
-						  <ons-col>35 min</ons-col>
-						</ons-row>
-					</div>
-					<div class="single_booking_row">
-						<ons-row>
-						  <ons-col><a href="">Restaurant Name 5</a></ons-col>			  
-						  <ons-col><a href=""><ons-icon icon="fa-map-marker" class="map_icon_color"></ons-icon></a></ons-col>
-						  <ons-col>35 min</ons-col>
-						</ons-row>
-					</div>
-					<div class="single_booking_row">
-						<ons-row>
-						  <ons-col><a href="">Restaurant Name 6</a></ons-col>			  
-						  <ons-col><a href=""><ons-icon icon="fa-map-marker" class="map_icon_color"></ons-icon></a></ons-col>
-						  <ons-col>35 min</ons-col>
-						</ons-row>
-					</div>	
+							
+					
+					
+					
+					
 				</div>
 			</div>
 
@@ -125,7 +97,32 @@
     </div>
 </template>
 <script>
+  import axios from 'axios'
   export default {
-    name: 'Tablebooking'
+    name: 'Tablebooking',
+    data () {
+      return {
+        restaurant: {}
+      }
+    },
+    created () {
+      this.fetchData()
+    },
+    watch: {
+      '$route': 'fetchData'
+    },
+    methods: {
+      fetchData () {
+        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/wp/v2/restaurant/')
+        .then((resp) => {
+          this.restaurant = resp.data
+          console.log('--------------------------------')
+          console.log(resp.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+      }
+    }
   }
 </script>
