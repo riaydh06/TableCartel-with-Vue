@@ -122,7 +122,7 @@ ul.paginate-links.food{
 ul.paginate-links {
   list-style: none;
   color: white;
-
+  clear:both;
 }
 .next{
 

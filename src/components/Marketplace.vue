@@ -59,7 +59,7 @@
 					</ons-row>
 				</div>	
 			</div>	
-			<infinite-loading :on-infinite="onInfinite" ref="infiniteLoading"></infinite-loading>
+			<!-- <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading"></infinite-loading> -->
 		</div>
 	</div>
 
@@ -106,7 +106,7 @@
     },
     methods: {
       fetchData () {
-        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/wp/v2/restaurant')
+        axios.get('http://clients.itsd.com.bd/table-cartel/wp-json/wp/v2/restaurant?per_page=100')
         .then((resp) => {
           this.restaurant = resp.data
           console.log('--------------------------------')
