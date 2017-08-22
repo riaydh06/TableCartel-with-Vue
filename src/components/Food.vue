@@ -41,9 +41,9 @@
           <div style="padding: 1px 0 0 0;">
             <div class="card_new">
               <p>Publisher Name</p>
-              <h2 class="card__title_one"  > Article Name : {{food.title.rendered}} </h2>
-              <h2 class="card__title_one" >Food Price :{{food.food_price}} </h2>
-              <div class="card__content_two">
+              <h2 class="card__title_one"  > Food Name : {{food.title.rendered}} </h2>
+              <h2 class="card__title_one" >Food Price : {{food.food_price}} </h2>
+              <div>
                 <h2  class="cuisine" v-for="item in food.cuisine_type" >
                    {{ item.name }}
                 </h2><br>
